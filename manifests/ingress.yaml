@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: betpawa-ingress
+  annotations:
+     kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: domainname.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: betpawa
+          servicePort: 5000
